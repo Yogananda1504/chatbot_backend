@@ -16,12 +16,14 @@ const PORT = 3000;
 connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
-app.use(cors({
-    origin: frontendUrl,
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
-}));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://chatbot-vynr.netlify.app'); // Allow only your Netlify app
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Specify allowed methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
+    res.setHeader('Access-Control-Allow-Credentials', 'true'); // If using credentials (cookies, authorization headers)
+    next();
+  });
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
