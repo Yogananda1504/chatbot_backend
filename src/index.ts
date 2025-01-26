@@ -17,7 +17,7 @@ connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
 app.use(cors({
-    origin: "*",
+    origin: [`${frontendUrl}`,`${frontendUrl}/signin` ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
