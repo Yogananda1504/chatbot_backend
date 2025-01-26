@@ -17,7 +17,7 @@ connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
 app.use(cors({
-    origin: ["https://chatbot-vynr.netlify.app/","https://chatbot-vynr.netlify.app"],
+    origin: "https://chatbot-vynr.netlify.app",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
