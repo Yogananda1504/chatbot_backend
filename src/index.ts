@@ -17,10 +17,10 @@ connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://chatbot-vynr.netlify.app'); // Allow only your Netlify app
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Specify allowed methods
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
-    res.setHeader('Access-Control-Allow-Credentials', 'true'); // If using credentials (cookies, authorization headers)
+    res.setHeader('Access-Control-Allow-Origin', 'https://chatbot-vynr.netlify.app'); 
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); 
+    res.setHeader('Access-Control-Allow-Credentials', 'true'); 
     next();
   });
 
