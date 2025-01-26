@@ -16,7 +16,9 @@ const PORT = 3000;
 connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
-app.use(cors({ origin: [process.env.CLIENT_URL ?? '']}))
+app.use(cors({ origin: [process.env.CLIENT_URL ?? ''],
+    credentials:true,
+}))
 app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
