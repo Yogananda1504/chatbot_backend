@@ -17,10 +17,11 @@ connectToDB();
 const frontendUrl  = process.env.CLIENT_URL;
 console.log(frontendUrl)
 app.use(cors({
-    origin: `${frontendUrl}`, 
+    origin: "*",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    
 }));
 app.use(express.json());
 app.use(cookieParser());
